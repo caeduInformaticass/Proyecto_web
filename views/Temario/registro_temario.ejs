@@ -1,0 +1,45 @@
+<nav>
+    <div class="nav-wrapper light-green darken-3">
+      <a href="#" class="brand-logo center">Temario</a>
+    </div>
+</nav>
+
+<div class="container">
+   <div class="row">
+       <br><br><br>
+        <form class="col s12" action="/Temario/create" method="POST" accept-charset="utf-8">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <input id="Nombre_Temario" type="text" class="validate" name="temario">
+              <label for="Nombre_Temario">Nombre de Tema</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <input id="Descripsion" type="text" class="validate" name="descripsion">
+              <label for="Descripsion">Descripsion</label>
+            </div>
+          </div>
+		  <label>Area</label>
+          <select class="browser-default" name="id_area">
+			<option value="" disabled selected>Seleccione una Area</option>
+			<%_.each(area, function(a){ %>
+			<option  value="<%= a.id_area %>"><%= a.area %></option>
+			<%})%>
+          </select> 
+		 <br>
+         <br>
+         <br>
+		 <div class="row">
+              <div class="input-field col s12">
+                  <button class="btn waves-effect waves-light green right" type="submit" name="registro">Registrar Temario
+                  </button>
+              </div>
+          </div>
+        </form>
+    </div>
+</div>
+	  
+

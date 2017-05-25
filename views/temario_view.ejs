@@ -1,0 +1,48 @@
+<nav>
+  <div class="nav-wrapper light-green darken-3">
+	<a href="#" class="brand-logo center">Temario</a>
+  </div>
+</nav>
+
+<%_.each(area ,function(a){<h2><%=a.area%></h2>})%>
+
+<div class="container">
+  <div class="row">
+	<br><br><br>
+	<form class="col s12" action="Temario/create" method="POST" accept-charset="utf-8">
+	  <div class="row">
+		<div class="input-field col s12">
+		  <i class="material-icons prefix">mode_edit</i>
+		  <input id="Nombre_Temario" type="text" class="validate" name="Nombre_Temario">
+		  <label for="Nombre_Temario">Nombre de Tema</label>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="input-field col s12">
+		  <i class="material-icons prefix">mode_edit</i>
+		  <input id="Descripsion" type="text" class="validate" name="Descripsion">
+		  <label for="Descripsion">Descripsion</label>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="input-field col s12">
+		  <i class="material-icons prefix">mode_edit</
+			<select name="s_area" id="s_area">
+			</select>
+		</div>
+	  </div>
+	  <br>
+	  <br>
+	  <br>
+	  <div class="row">
+		<div class="input-field col s12">
+		  <button class="btn waves-effect waves-light green right" type="submit" name="registro">Login
+		  </button>
+		</div>
+	  </div>
+	</form>
+  </div>
+</div>
+
+
+
