@@ -1,0 +1,18 @@
+                <!-- Tabla de las complejidades -->                
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID Complejidad</th>
+                            <th>Complejidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%_.each(complejidad, function(c){%>
+                        <tr>
+                            <td><%= c.id_complejidad%></td>
+                            <td><%= c.complejidad%></td>
+                            <td><button type="button" class="btn btn-danger">eliminar</button></td>
+                        </tr>
+                        <%})%>
+                    </tbody>
+                </table>

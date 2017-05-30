@@ -1,0 +1,21 @@
+                <!-- Tabla de temarios -->
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID Temario</th>
+                            <th>Temario</th>
+                            <th>Area</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%_.each(temario, function(t){%>
+                        <tr>
+                            <td><%= t.id_temario%></td>
+                            <td><%= t.temario%></td>
+                            <td><%= t.id_area_Area.area%></td>
+                            <td><button type="button" class="btn btn-danger">eliminar</button></td>
+                        </tr>
+                        <%})%>
+                    </tbody>
+                </table>

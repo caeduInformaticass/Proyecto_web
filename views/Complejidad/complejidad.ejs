@@ -1,7 +1,7 @@
 <!-- PestanasRegistro de preguntas-->
     <div class="container" id="id_con_pes_pre">
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="#">Preguntas</a></li>
+            <li role="presentation"><a href="/Pregunta/lista_pregunta">Preguntas</a></li>
             <li role="presentation"><a href="/Pregunta/nuevo_pregunta">Registro de Preguntas</a></li>
             <li role="presentation"><a href="/Temario/nuevo_temario">Registrar Temario</a></li>
             <li role="presentation"><a href="/Area/nuevo_area">Registrar Area</a></li>
@@ -13,36 +13,12 @@
        <br><br>
         <div class="row">
          <div class="col-md-6">
-<!-- Formlario de Registro de Complejidad  -->
-              <form id="form_complejidad" name="fo" action="/Complejidad/crear_complejidad">
-                  <div class="form-group">
-                      <label for="id_complejidad">Nueva Complejidad</label>
-                      <input type="text" class="form-control" id="id_complejidad" placeholder="Complejidad" name="complejidad">
-                  </div>
-                  <button type="submit" class="btn btn-success">Agregar nueva Complejidad</button>
-              </form> 
-              <br><br>
+            <%- partial('./formulario_complejidad.ejs')%>
           </div>
 <!-- Tabla de las complejidades -->
           <div class="col-md-6">
               <h4>Lista de <strong>Complejidad</strong></h4>
-              <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID Complejidad</th>
-                            <th>Complejidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%_.each(complejidad, function(c){%>
-                        <tr>
-                            <td><%= c.id_complejidad%></td>
-                            <td><%= c.complejidad%></td>
-                            <td><button type="button" class="btn btn-danger">eliminar</button></td>
-                        </tr>
-                        <%})%>
-                    </tbody>
-                </table>
+              <%- partial('./tabla_complejidad')%>
           </div>
         </div>
     </div>

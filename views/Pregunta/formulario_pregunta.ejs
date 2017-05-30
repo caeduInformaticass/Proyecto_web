@@ -1,0 +1,38 @@
+                <!-- Formulario -->
+                <form>
+                  <div class="form-group">
+                    <label for="id_pregunta">Pregunta</label>
+                    <input type="text" class="form-control" id="id_pregunta" placeholder="Escriba una pregunta" name="pregunta">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_descripsion">Descripsion</label>
+                    <textarea class="form-control" name="" id="id_descripsion" cols="3" placeholder="Escriba una Descripsion" name="descripsion"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="id_imagen">Agregar una imagen para la pregunta</label>
+                    <input type="file" id="id_imagen" name="imagen">
+                    <p class="help-block">Util para mostrar ecuaciones</p>
+                  </div>
+                  <div class="form-group" id="id_complejidad">
+                     <label for="id_complejidad">Seleccione una complejidad para la pregunta</label>
+                     <br>
+                      <select class="selectpicket" name="id_complejidad">
+                          <option disabled>Complejidad</option>
+                          <!-- Agregar Complejidad -->
+                          <%_.each(complejidad, function(c){%>
+                          <option value="<%= c.id_complejidad%>"><%= c.complejidad%></option>
+                          <%})%>
+                        </select>
+                  </div>
+                  <div class="form-group">
+                     <label for="">Seleccione un Temario para la pregunta</label>
+                     <br>
+                      <select class="selectpicket" name="">
+                          <option disabled>Elija un area</option>
+                          <!-- Agregar Temario -->
+                          <%_.each(temario, function(t){%>
+                          <option value="<%= t.id_temario%>"><%= t.temario%></option>
+                          <%})%>
+                        </select>
+                  </div>
+                </form>

@@ -1,0 +1,19 @@
+              <!-- Formulario de Temario, Registrar nuevo Temario -->
+              <form action="/Temario/crear_temario">
+                  <div class="form-group">
+                      <label for="id_temario">Nuevo Temario</label>
+                      <input type="text" class="form-control" id="id_temario" placeholder="Temario" name="temario">
+                  </div>
+                  <div class="form-group">
+                      <label for="id_area">Area</label>
+                      <br>
+                      <select name="id_area" id="id_area" class="selectpicket">
+                          <option value="" class="" disabled>Agrege una Area</option>
+                          <%_.each(area, function(a){%>
+                          <option value="<%= a.id_area%>"><%= a.area%></option>
+                          <%})%>
+                      </select>
+                  </div>
+                  <button type="submit" class="btn btn-success">Agregar un nuevo Temario</button>
+              </form> 
+              <br><br>

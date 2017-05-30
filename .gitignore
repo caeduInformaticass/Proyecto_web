@@ -116,3 +116,11 @@ npm-debug.log
 nbproject
 .idea
 .node_history
+
+##########################
+## VIEW que de pruebas
+
+views/Area/registro_area.ejs
+views/Complejidad/registro_complejidad.ejs
+views/Pregunta/registro_pregunta.ejs
+views/Temario/registro_temario.ejs

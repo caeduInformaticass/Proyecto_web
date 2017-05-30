@@ -1,7 +1,7 @@
 <!-- PestanasRegistro de preguntas-->
     <div class="container" id="id_con_pes_pre">
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="#">Preguntas</a></li>
+            <li role="presentation"><a href="/Pregunta/lista_pregunta">Preguntas</a></li>
             <li role="presentation" class="active"><a href="/Pregunta/nuevo_pregunta">Registro de Preguntas</a></li>
             <li role="presentation"><a href="/Temario/nuevo_temario">Registrar Temario</a></li>
             <li role="presentation" ><a href="/Area/nuevo_area">Registrar Area</a></li>
@@ -13,73 +13,19 @@
         <div class="row">
             <div class="col-md-6">
                 <h4>Agregar una <strong>Pregunta</strong></h4>
-                
+<!-- Formulario de Pregunta  -->
+                <%- partial('./formulario_pregunta.ejs')%>
                 <br>
-<!-- Formulario -->
-                <form>
-                  <div class="form-group">
-                    <label for="id_pregunta">Pregunta</label>
-                    <input type="text" class="form-control" id="id_pregunta" placeholder="Escriba una pregunta" name="pregunta">
-                  </div>
-                  <div class="form-group">
-                    <label for="id_descripsion">Descripsion</label>
-                    <textarea class="form-control" name="" id="id_descripsion" cols="3" placeholder="Escriba una Descripsion" name="descripsion"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="id_imagen">Agregar una imagen para la pregunta</label>
-                    <input type="file" id="id_imagen" name="imagen">
-                    <p class="help-block">Util para mostrar ecuaciones</p>
-                  </div>
-                  <div class="form-group" id="id_complejidad">
-                     <label for="id_complejidad">Seleccione una complejidad para la pregunta</label>
-                     <br>
-                      <select class="selectpicket" name="id_complejidad">
-                          <option disabled>Complejidad</option>
-<!-- Agregar Complejidad -->
-                          <%_.each(complejidad, function(c){%>
-                          <option value="<%= c.id_complejidad%>"><%= c.complejidad%></option>
-                          <%})%>
-                        </select>
-                  </div>
-                  <div class="form-group">
-                     <label for="">Seleccione un Temario para la pregunta</label>
-                     <br>
-                      <select class="selectpicket" name="">
-                          <option disabled>Elija un area</option>
-<!-- Agregar Temario -->
-                          <%_.each(temario, function(t){%>
-                          <option value="<%= t.id_temario%>"><%= t.temario%></option>
-                          <%})%>
-                        </select>
-                  </div>
-                </form>
+
             </div>
             <div class="col-md-6">
                 <h4>Agregar la <strong>Respuesta</strong> de la pregunta</h4>
                 <br>
                 <br>
 <!-- Agregar una respuesta-->
-                <div class="input-group">
-                  <input type="text" class="form-control" aria-label="" placeholder="Agregue una respuesta">
-                  <div class="input-group-btn">
-                    <a class="btn btn-default" href="#" role="button" id="add_res">Agregar Respuesta</a>
-                  </div>
-                </div> 
+                 <%- partial('../Respuesta/formulario_respuesta.ejs')%>
 <!-- Tabla de respuestas registradas  -->
-                <br><br>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID Respuesta</th>
-                            <th>Respuesta</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><button type="button" class="btn btn-danger">eliminar</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                 <%- partial('../Respuesta/tabla_respuesta.ejs')%> 
             </div>
         </div> 
         <div class="row">
