@@ -1,0 +1,61 @@
+<!-- PestanasRegistro de preguntas-->
+    <div class="container" id="id_con_pes_pre">
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="#">Preguntas</a></li>
+            <li role="presentation"><a href="/Pregunta/nuevo_pregunta">Registro de Preguntas</a></li>
+            <li role="presentation" class="active"><a href="/Temario/nuevo_temario">Registrar Temario</a></li>
+            <li role="presentation"><a href="/Area/nuevo_area">Registrar Area</a></li>
+            <li role="presentation"><a href="/Complejidad/nuevo_complejidad">Registrar Complejidad</a></li>
+        </ul>
+    </div>
+
+<!--  Body de Temario-->
+    <div class="container">
+       <br><br>
+        <div class="row">
+<!-- Formulario de Registro de Temario -->
+         <div class="col-md-6">
+              <form action="/Temario/crear_temario">
+                  <div class="form-group">
+                      <label for="id_temario">Nuevo Temario</label>
+                      <input type="text" class="form-control" id="id_temario" placeholder="Temario" name="temario">
+                  </div>
+                  <div class="form-group">
+                      <label for="id_area">Area</label>
+                      <br>
+                      <select name="id_area" id="id_area" class="selectpicket">
+                          <option value="" class="" disabled>Agrege una Area</option>
+                          <%_.each(area, function(a){%>
+                          <option value="<%= a.id_area%>"><%= a.area%></option>
+                          <%})%>
+                      </select>
+                  </div>
+                  <button type="submit" class="btn btn-success">Agregar un nuevo Temario</button>
+              </form> 
+              <br><br>
+          </div>
+<!-- Tabla de todos los temarios -->
+          <div class="col-md-6">
+              <h4>Lista de <strong>Temarios</strong></h4>
+              <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID Temario</th>
+                            <th>Temario</th>
+                            <th>Area</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%_.each(temario, function(t){%>
+                        <tr>
+                            <td><%= t.id_temario%></td>
+                            <td><%= t.temario%></td>
+                            <td><%= t.id_area_Area.area%></td>
+                            <td><button type="button" class="btn btn-danger">eliminar</button></td>
+                        </tr>
+                        <%})%>
+                    </tbody>
+                </table>
+          </div>
+        </div>
+    </div>

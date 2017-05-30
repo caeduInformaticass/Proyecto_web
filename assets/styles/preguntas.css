@@ -1,0 +1,19 @@
+/*Header*/
+header{
+    padding: -5px;
+}
+/*Menu-bar*/
+.menu-bar{
+}
+    .menu-bar a {
+        font-size:15px;
+        font-weight: 500;
+    }
+    .menu-bar a:hover{
+        text-decoration: none;
+    }
+.menu-list{
+    padding: 5px 0;
+    margin-bottom: 0;
+}
+

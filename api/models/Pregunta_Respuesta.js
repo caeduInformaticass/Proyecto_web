@@ -24,7 +24,6 @@ module.exports = {
 		},
 		id_respuesta_Respuesta : {
 			model : 'Respuesta',
-			required : true
 		}
 	}
 };

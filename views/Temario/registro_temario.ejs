@@ -7,7 +7,18 @@
 <div class="container">
    <div class="row">
        <br><br><br>
-        <form class="col s12" action="/Temario/create" method="POST" accept-charset="utf-8">
+       <form class="col s12" action="/Temario/create" method="POST" accept-charset="utf-8">
+		 <label>Area</label>
+         <select class="browser-default" name="id_area">
+           <option value="" disabled selected>Seleccione una Area</option>
+           <%_.each(area, function(a){ %>
+           <option  value="<%= a.id_area %>"><%= a.area %></option>
+           <%})%>
+         </select>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">mode_edit</i>
@@ -22,13 +33,6 @@
               <label for="Descripsion">Descripsion</label>
             </div>
           </div>
-		  <label>Area</label>
-          <select class="browser-default" name="id_area">
-			<option value="" disabled selected>Seleccione una Area</option>
-			<%_.each(area, function(a){ %>
-			<option  value="<%= a.id_area %>"><%= a.area %></option>
-			<%})%>
-          </select> 
 		 <br>
          <br>
          <br>

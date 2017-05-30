@@ -17,7 +17,6 @@ module.exports = {
 	attributes: {
 		id_rol : {
 			type : 'integer',
-			required : true,
 			primaryKey : true,
 			columnName : 'id_rol',
 			autoIncrement : true

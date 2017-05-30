@@ -14,7 +14,6 @@ module.exports = {
 	attributes: {
 		id_complejidad : {
 			type : 'integer',
-			required : true,
 			columnName : 'id_complejidad',
 			autoIncrement :true ,
 			primaryKey : true
@@ -28,7 +27,7 @@ module.exports = {
 
 		estado : {
 			type : 'string',
-			requried : true,
+			required : true,
 			columnName : 'estado',
 		   	defaultsTo : 'Y'
 		},

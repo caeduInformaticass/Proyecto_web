@@ -16,9 +16,8 @@ module.exports = {
 		id_examen :{
 			type : 'integer',
 			autoIncrement : true,
-			primaryKey : true,
-			required : true,
-			columnName : 'id_examen'
+			columnName : 'id_examen',
+			primaryKey:true
 		},
 
 		fecha : {
@@ -44,7 +43,6 @@ module.exports = {
 		},
 		id_complejidad_Complejidad:{
 			model : 'Complejidad',
-			required: true
 		},
         //REFERENCIAS
 		Evaluacion : {

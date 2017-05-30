@@ -12,17 +12,41 @@ module.exports = {
 	
 	create:function(req,res,next){
 		var ob_area  = {
-			area : req.param('area'),
+			area : req.param('req_area'),
 		}
 		Area.create(ob_area)
 			.then(function(area){
 				console.log(area)
-				return res.redirect('Area/registro_area')
+				return res.redirect('Pregunta/registro_pregunta')
 			})
 			.catch(function(err){
 				console.log(err)
 				return next(err)
+			}) 
+	},
+	nuevo_area: function(req,res,next){
+		Area.find({estado:'Y'})
+		.then(function(area){
+			return res.view('Area/area', {
+				area:area
 			})
+		.catch(function(err){
+			return next(err)
+		})
+		})
+	},
+	crear_area : function(req, res, next){
+		var ob_area = {
+			area : req.param('area')
+		}
+		Area.create(ob_area)
+		.then(function(area){
+			console.log(area)
+			return res.redirect('Area/nuevo_area')
+		})
+		.catch(function(err){
+			return next(err)
+		})
 	}
 };
 

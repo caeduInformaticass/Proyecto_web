@@ -14,7 +14,6 @@ module.exports = {
 	attributes: {
 		id_respuesta : {
 			type : 'integer',
-			required : true,
 			autoIncrement : true,
 			columnName : 'id_respuesta',
 			primaryKey : true

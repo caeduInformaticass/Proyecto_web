@@ -1,0 +1,95 @@
+<script src="/js/jquery-3.2.1.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(crear)
+	
+	function crear(){
+		$('#btn_agregar').on('click', function(){
+			$.ajax({
+			url:"/Complejidad/ajax",
+			type:"POST",
+			data: $('#form_complejidad').serialize(),
+			success : function(res){
+				console.log(res)
+				// console.log(res.id_complejidad)
+				// console.log(res.complejidad)
+				// console.log(res[0])
+				var id_complejidad = res.id_complejidad
+				var complejidad = res.complejidad
+				var tabla = "<tr><td>"+id_complejidad+"</td><td>"+complejidad+"</td></tr>"
+
+				// var id_complejidad = document.createTextNode(res.id_complejidad)
+				// var complejidad = document.createTextNode(res.complejidad)
+				// var td = document.createElement("TD")
+				// var tr_id_complejidad = document.createElement("TR")
+				// var tr_complejidad = document.createElement("TR")
+
+				// tr_id_complejidad.appendChild(id_complejidad)
+				// tr_complejidad.appendChild(complejidad)
+				// td.appendChild(tr_id_complejidad)
+				// td.appendChild(tr_complejidad)
+
+				$("#tabla_complejidad").append(tabla)
+
+			},
+			error: function(jqXHR,estado, err){
+
+			},
+			complete: function(jqXHR, estado){
+
+			}
+		})
+		})
+	}
+</script>
+
+<nav>
+  <div class="nav-wrapper light-green darken-3">
+	<a href="#" class="brand-logo center">Registro de grados de complejidad</a>
+  </div>
+</nav> 
+
+<div class="container">
+  <div class="row">
+	<br><br><br>
+	<form class="col s12" action="/Complejidad/ajax" method="POST" accept-charset="utf-8" id="form_complejidad">
+	  <div class="row">
+		<div class="input-field col s12">
+		  <i class="material-icons prefix">mode_edit</i>
+		  <input id="i_complejidad" type="text" class="validate" name="complejidad">
+		  <label for="i_complejidad">Complejidad</label>
+		</div>
+	  </div>
+	  <br>
+	  <br>
+	  <br>
+	  <div class="row">
+		<div class="input-field col s12">
+			<a class="waves-effect waves-light btn right" id="btn_agregar">moestrar en tabla</a>			
+		 <!--  <button class="btn waves-effect waves-light green right" type="submit" name="registro">Registro grado de Complejidad
+		  </button> -->
+		</div>
+	  </div>
+	</form>
+  </div>
+  <div >
+  	<div>
+  		<table>
+  			<thead>
+  				<tr>
+  					<th>id complejidad</th>
+  					<th>Complejidad</th>
+  				</tr>
+  			</thead>
+  			<tbody id="tabla_complejidad">
+  				<tr>
+  					<td>Hola</td>
+  					<td>mundo</td>
+  				</tr>
+  			</tbody>
+  		</table>
+  	</div>
+  </div>
+</div> 
+
+<%- partial('../Temario/registro_temario.ejs')%>

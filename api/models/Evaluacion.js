@@ -16,7 +16,6 @@ module.exports = {
 	 attributes: {
 	 	id_evaluacion : {
 	 		type : 'integer',
-	 		required : true,
 	 		primaryKey : true,
 	 		columnName :'id_evaluacion',
 	 		autoIncrement : true

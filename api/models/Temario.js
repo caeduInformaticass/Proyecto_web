@@ -39,8 +39,8 @@ module.exports = {
 			model : 'Area',
 		},
 		//REFERENCIA
-		Temario_Pregunta :{
-			collection : 'Temario_Pregunta',
+		Pregunta :{
+			collection : 'Pregunta',
 			via : 'id_temario_Temario'
 		}
 	}

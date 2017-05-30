@@ -18,13 +18,11 @@ module.exports = {
 
 		pid : {
 			type : 'integer',
-			required : true ,
 			columnName: 'pid'
 		},
 
 		fecha :{
 			type : 'string',
-			required : true,
 			columnName: 'fecha',
 			primaryKey : true
 		},
